@@ -1,0 +1,39 @@
+const fs = require("fs");
+
+let rawdata = fs.readFileSync("data.json","utf8");
+
+let dataObject = JSON.parse(rawdata);
+
+
+console.log(dataObject.data[10]);
+
+
+
+///   below is for INCLUSIVE
+
+
+let csvdata = fs.readFileSync("housing.csv","utf8");
+
+
+let linesArray = csvdata.split("\n");
+console.log(typeof linesArray[0]);  // == string
+console.log(typeof linesArray[1]); // =string
+// ------make data
+let dataarr = [];
+for (var i = 0; i < linesArray.length ; i++)  {
+ dataarr[i] = linesArray[i].split(",");
+
+
+ console.log(` ${i} the district is: ${dataarr[i][23]} year is ${dataarr[i][1]} `);
+}
+ // the second indice is value
+//console.log(`the year is: ${dataarr[1000][1]}`);
+//console.log(`the quarter is: ${dataarr[1000][1]}`);
+//console.log(linesArray[1000]);
+
+
+/* this is just to see index with the respective values
+for (var j = 0; j < dataarr[10].length ; j++) {
+  console.log(`  ${j} ${dataarr[10][j]} `);
+}
+*/
