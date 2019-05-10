@@ -1,19 +1,9 @@
 const fs = require("fs");
-
 let rawdata = fs.readFileSync("data.json","utf8");
-
 let dataObject = JSON.parse(rawdata);
-
-
 //console.log(dataObject.data[10]);
-
-
-
 ///   below is for INCLUSIVE
-
-
 let csvdata = fs.readFileSync("housing.csv","utf8");
-
 
 let linesArray = csvdata.split("\n"); // splits data into usable lines for analysis
 //console.log(linesArray[0]);  // == string
@@ -50,16 +40,8 @@ let rida = isNumber( dataarr[i][22]  );
  dataarr[i].splice(22, 1);
  }
 
-  
-  myArr.push(dataarr[i]);  // array that is to be sorted
+    myArr.push(dataarr[i]);  // array that is to be sorted
 
-// if not uppercase at first letter of column 22 , then eliminate that row of data
-
-
-//console.log(` 3664 dist val at 23 is ${dataarr[3664][23]} at 24 is ${dataarr[3664][24]}`);
- ///console.log(` ${i} the district at 22: ${dataarr[i][22]} at 23 ${dataarr[i][23]} `);
- //console.log( i, dataarr[3664][22]);
- //console.log(` i3631 the datatype is ${ dataarr[3631][22]} `);
 }
 
 // below code short arRAY by element zero, the precise year
@@ -84,7 +66,6 @@ myArr[i][22]  = myArr[i][22].toUpperCase();
 let astring = myArr[i][12].toUpperCase();
   
 
-
 // find all demos with year, date, quarter, neighborhood
 
 	if ( astring.includes('DEMO') ) {
@@ -101,8 +82,7 @@ let astring = myArr[i][12].toUpperCase();
 	
 	}
 
-  
- 
+   
 }
 
 console.log("Total number of DEMO between 2005-2018", demoarr.length);
@@ -143,8 +123,6 @@ for (var i = 0; i < distloc.length; i++) {
 		}
 // console.log(district(distname));
 
-  
-  
 //   	console.log( ` ${distloc[i]} has ${district(distname)} Demolitions`);
 }
 
@@ -163,7 +141,4 @@ for (var i = 0; i < distloc.length; i++) {
 
 //	let dd = c.length
 	console.log(` The greatest number of demolitions btwn 2005 - 2018 is BAYVIEW with ${dcount} demolitions `);
-
-
-
 
